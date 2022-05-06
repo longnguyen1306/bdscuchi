@@ -2,11 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
-
+//admin
 Route::prefix('admin')
     ->controller(\App\Http\Controllers\Admin\indexController::class)
     ->middleware(['auth.admin', 'admin.role:admin'])
@@ -84,5 +82,3 @@ Route::post('admin/login-submit', [\App\Http\Controllers\Admin\AdminAuthControll
 Route::get('admin/logout', [\App\Http\Controllers\Admin\AdminAuthController::class, 'logout'])->name('admin.logout');
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
