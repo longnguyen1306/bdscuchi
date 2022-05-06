@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('admin.index') }}" class="brand-link">
-        <img src="/backend/dist/img/AdminLTELogo.png"  class="brand-image img-circle elevation-3" style="opacity: .8; width: 33px; height: 33px">
+        <img src="{{ asset('images/default/logo.jpg') }}"  class="brand-image img-circle elevation-3" style="opacity: .8; width: 33px; height: 33px">
         <span class="brand-text font-weight-light">BSD CỦ CHI</span>
     </a>
 
@@ -10,7 +10,11 @@
         <!-- Sidebar user (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="/backend/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                @if(auth()->user()->avatar)
+                <img src="{{ asset(auth()->user()->avatar) }}" class="img-circle elevation-2">
+                @else
+                <img src="{{ asset('images/default/default-user.jpg') }}" class="img-circle elevation-2">
+                @endif
             </div>
             <div class="info">
                 <a href="#" class="d-block">{{ auth()->user()->name }}</a>
@@ -31,7 +35,7 @@
                 <!--menus-->
                 <li class="nav-item {{ Request::is('admin/menus*') ? 'menu-is-opening menu-open' : '' }}">
                     <a href="#" class="nav-link {{ Request::is('admin/menus*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-users"></i>
+                        <i class="nav-icon fas fa-bars"></i>
                         <p>
                             Menus
                             <i class="fas fa-angle-left right"></i>
@@ -51,7 +55,7 @@
                 <!--Danh mục-->
                 <li class="nav-item {{ Request::is('admin/danh-muc*') ? 'menu-is-opening menu-open' : '' }}">
                     <a href="#" class="nav-link {{ Request::is('admin/danh-muc*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-users"></i>
+                        <i class="nav-icon fas fa-align-justify"></i>
                         <p>
                             Danh mục
                             <i class="fas fa-angle-left right"></i>
@@ -98,6 +102,25 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Quyền</p>
                             </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--settings-->
+                <li class="nav-item {{ Request::is('admin/settings*') ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::is('admin/settings*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Settings
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item {{ Request::is('admin/nguoi-dung-va-quyen*') ? 'menu-is-opening menu-open' : '' }}">
+                            <a href="{{ route('admin.top_search.config') }}" class="nav-link {{ Request::is('admin/settings/top-search*') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Top search</p>
+                            </a>
+
                         </li>
                     </ul>
                 </li>

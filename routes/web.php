@@ -70,6 +70,13 @@ Route::prefix('admin')
             Route::post('update/{id}', 'update')->name('admin..update');
         });
     });
+    //settings
+    Route::prefix('settings')->group(function () {
+        Route::prefix('top-search')->controller(\App\Http\Controllers\Admin\SettingTopSearchController::class)->group(function () {
+            Route::get('config', 'config')->name('admin.top_search.config');
+            Route::post('update', 'update')->name('admin.top_search.update');
+        });
+    });
 });
 
 Route::get('admin/login', [\App\Http\Controllers\Admin\AdminAuthController::class, 'login'])->name('admin.login');
