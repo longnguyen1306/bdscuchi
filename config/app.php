@@ -188,6 +188,7 @@ return [
         Yoeunes\Toastr\ToastrServiceProvider::class,
         andcarpi\Popper\PopperServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
         /*
          * Application Service Providers...
          */

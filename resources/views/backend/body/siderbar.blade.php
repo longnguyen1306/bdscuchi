@@ -13,10 +13,10 @@
                 <img src="/backend/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">{{ auth()->user()->name }}</a>
             </div>
         </div>
-
+        @role('admin')
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
@@ -42,10 +42,15 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách người dùng</p>
                             </a>
+                            <a href="{{ route('admin.quyen.index') }}" class="nav-link {{ Request::is('admin/nguoi-dung-va-quyen/quyen*') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Quyền</p>
+                            </a>
                         </li>
                     </ul>
                 </li>
             </ul>
         </nav>
+        @endrole
     </div>
 </aside>

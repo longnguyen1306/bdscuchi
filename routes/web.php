@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::prefix('admin')
     ->controller(\App\Http\Controllers\Admin\indexController::class)
-    ->middleware('auth.admin')
+    ->middleware(['auth.admin', 'admin.role:admin'])
     ->group(function () {
     Route::get('/', 'index')->name('admin.index');
     Route::prefix('nguoi-dung-va-quyen')->group(function () {
@@ -18,6 +18,11 @@ Route::prefix('admin')
             Route::get('edit/{id}', 'edit')->name('admin.nguoi_dung.edit');
             Route::post('update/{id}', 'update')->name('admin.nguoi_dung.update');
             Route::get('delete/{id}', 'destroy')->name('admin.nguoi_dung.destroy');
+        });
+        Route::prefix('quyen')->controller(\App\Http\Controllers\Admin\AdminRoleController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.quyen.index');
+            Route::get('edit/{id}', 'edit')->name('admin.quyen.edit');
+            Route::post('update/{id}', 'update')->name('admin..update');
         });
     });
 });
