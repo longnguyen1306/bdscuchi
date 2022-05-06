@@ -27,6 +27,48 @@
                         </p>
                     </a>
                 </li>
+
+                <!--menus-->
+                <li class="nav-item {{ Request::is('admin/menus*') ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::is('admin/menus*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Menus
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item {{ Request::is('admin/menus*') ? 'menu-is-opening menu-open' : '' }}">
+                            <a href="{{ route('admin.top_menu.index') }}" class="nav-link {{ Request::is('admin/menus/top-menu*') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Top menus</p>
+                            </a>
+
+                        </li>
+                    </ul>
+                </li>
+
+                <!--Danh mục-->
+                <li class="nav-item {{ Request::is('admin/danh-muc*') ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::is('admin/danh-muc*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Danh mục
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item {{ Request::is('admin/danh-muc*') ? 'menu-is-opening menu-open' : '' }}">
+                            <!--danh-muc-nha-dat-->
+                            <a href="{{ route('admin.danh_muc_nha_dat.index') }}" class="nav-link {{ Request::is('admin/danh-muc/danh-muc-nha-dat*') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh mục nhà đất</p>
+                            </a>
+
+                        </li>
+                    </ul>
+                </li>
+
                 <!--users-->
                 <li class="nav-item {{ Request::is('admin/nguoi-dung-va-quyen*') ? 'menu-is-opening menu-open' : '' }}">
                     <a href="#" class="nav-link {{ Request::is('admin/nguoi-dung-va-quyen*') ? 'active' : '' }}">
