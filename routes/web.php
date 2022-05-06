@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
+Route::get('danh-muc/{slug}.html', [\App\Http\Controllers\HomeController::class, 'getNhaDatByDanhMucSlug'])->name('get_nha_dat_by_danh_muc_slug');
+
 //admin
 Route::prefix('admin')
     ->controller(\App\Http\Controllers\Admin\indexController::class)

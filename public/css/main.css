@@ -1,0 +1,39 @@
+#header {
+    padding: 15px 0 80px 0;
+}
+.header.head-tr {
+    position: relative;
+}
+#header.cloned {
+    padding: 9px 0 10px 0;
+}
+#navigation.style-1.head-tr ul li a, .header-widget.sign-in a,.homepage-3 .header-user-name, .homepage-3 .header-user-name:before, .show-lang {
+    color: #707070;
+}
+#logo {
+    margin-top: -5px;
+}
+#logo img {
+    transform: translate3d(0, 0, 0);
+    width: 130px;
+    margin-top: -5px;
+}
+.left-side {
+    width: 80%;
+}
+#navigation {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#navigation.style-1.head-tr ul li a:hover {
+    color: #fff;
+}
+.right-side.sign, #header.cloned.sticky .right-side.sign {
+    border-right: none;
+    border-left: none;
+    width: 150px;
+    padding: 0;
+}
+#header.cloned #logo img {
+     margin-top:0;
+}
