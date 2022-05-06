@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
 Route::get('danh-muc/{slug}.html', [\App\Http\Controllers\HomeController::class, 'getNhaDatByDanhMucSlug'])->name('get_nha_dat_by_danh_muc_slug');
+Route::get('tim-kiem-nha-dat', [\App\Http\Controllers\HomeController::class, 'timKiemNhaDat'])->name('tim_kiem_nha_dat');
 
 //admin
 Route::prefix('admin')

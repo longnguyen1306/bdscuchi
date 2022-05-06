@@ -37,3 +37,9 @@
 #header.cloned #logo img {
      margin-top:0;
 }
+.homepage-3 .banner-inner .sub-title {
+    margin-bottom: 20px;
+}
+.the-search .rld-single-input input,.homepage-3 .rld-single-select .single-select {
+    width: 100%;
+}
