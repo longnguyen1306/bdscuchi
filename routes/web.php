@@ -7,6 +7,8 @@ Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('h
 Route::get('danh-muc/{slug}.html', [\App\Http\Controllers\HomeController::class, 'getNhaDatByDanhMucSlug'])->name('get_nha_dat_by_danh_muc_slug');
 Route::get('tim-kiem-nha-dat', [\App\Http\Controllers\HomeController::class, 'timKiemNhaDat'])->name('tim_kiem_nha_dat');
 
+Route::get('nha-dat/{slug}.html', [\App\Http\Controllers\NhaDatDetailController::class, 'detail'])->name('nha_dat_detail');
+
 //admin
 Route::prefix('admin')
     ->controller(\App\Http\Controllers\Admin\indexController::class)
