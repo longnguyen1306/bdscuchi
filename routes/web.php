@@ -25,8 +25,9 @@ Route::prefix('admin')
         });
     });
 
-    //menus
+    //danh-muc
     Route::prefix('danh-muc')->group(function () {
+            //danh-muc-nha-dat
             Route::prefix('danh-muc-nha-dat')->controller(\App\Http\Controllers\Admin\DanhMucNhaDatController::class)->group(function () {
                 Route::get('/', 'index')->name('admin.danh_muc_nha_dat.index');
                 Route::get('create', 'create')->name('admin.danh_muc_nha_dat.create');
@@ -34,6 +35,24 @@ Route::prefix('admin')
                 Route::get('edit/{id}', 'edit')->name('admin.danh_muc_nha_dat.edit');
                 Route::post('update/{id}', 'update')->name('admin.danh_muc_nha_dat.update');
                 Route::get('delete/{id}', 'destroy')->name('admin.danh_muc_nha_dat.destroy');
+            });
+            //quan-huyen
+            Route::prefix('quan-huyen')->controller(\App\Http\Controllers\Admin\QuanHuyenController::class)->group(function () {
+                Route::get('/', 'index')->name('admin.quan_huyen.index');
+                Route::get('create', 'create')->name('admin.quan_huyen.create');
+                Route::post('store', 'store')->name('admin.quan_huyen.store');
+                Route::get('edit/{id}', 'edit')->name('admin.quan_huyen.edit');
+                Route::post('update/{id}', 'update')->name('admin.quan_huyen.update');
+                Route::get('delete/{id}', 'destroy')->name('admin.quan_huyen.destroy');
+            });
+            //phuong-xa
+            Route::prefix('phuong-xa')->controller(\App\Http\Controllers\Admin\PhuongXaController::class)->group(function () {
+                Route::get('/', 'index')->name('admin.phuong_xa.index');
+                Route::get('create', 'create')->name('admin.phuong_xa.create');
+                Route::post('store', 'store')->name('admin.phuong_xa.store');
+                Route::get('edit/{id}', 'edit')->name('admin.phuong_xa.edit');
+                Route::post('update/{id}', 'update')->name('admin.phuong_xa.update');
+                Route::get('delete/{id}', 'destroy')->name('admin.phuong_xa.destroy');
             });
         });
 

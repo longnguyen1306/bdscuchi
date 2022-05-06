@@ -64,6 +64,16 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh mục nhà đất</p>
                             </a>
+                            <!--quận huyện-->
+                            <a href="{{ route('admin.quan_huyen.index') }}" class="nav-link {{ Request::is('admin/danh-muc/quan-huyen*') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Quận Huyện</p>
+                            </a>
+                            <!--phường xã-->
+                            <a href="{{ route('admin.phuong_xa.index') }}" class="nav-link {{ Request::is('admin/danh-muc/phuong-xa*') ? 'active' : '' }}">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Phường xã</p>
+                            </a>
 
                         </li>
                     </ul>
