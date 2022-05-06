@@ -12,6 +12,14 @@ Route::prefix('admin')
     ->middleware('auth.admin')
     ->group(function () {
     Route::get('/', 'index')->name('admin.index');
+    Route::prefix('nguoi-dung-va-quyen')->group(function () {
+        Route::prefix('danh-sach-nguoi-dung')->controller(\App\Http\Controllers\Admin\AdminUserController::class)->group(function () {
+            Route::get('/', 'index')->name('admin.nguoi_dung.index');
+            Route::get('edit/{id}', 'edit')->name('admin.nguoi_dung.edit');
+            Route::post('update/{id}', 'update')->name('admin.nguoi_dung.update');
+            Route::get('delete/{id}', 'destroy')->name('admin.nguoi_dung.destroy');
+        });
+    });
 });
 Route::get('admin/login', [\App\Http\Controllers\Admin\AdminAuthController::class, 'login'])->name('admin.login');
 Route::post('admin/login-submit', [\App\Http\Controllers\Admin\AdminAuthController::class, 'loginSubmit'])->name('admin.login_submit');

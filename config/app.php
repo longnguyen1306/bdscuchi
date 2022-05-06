@@ -186,6 +186,8 @@ return [
          * Package Service Providers...
          */
         Yoeunes\Toastr\ToastrServiceProvider::class,
+        andcarpi\Popper\PopperServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -210,6 +212,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Popper' => andcarpi\Popper\Facades\Popper::class,
+        'Image' => Intervention\Image\Facades\Image::class,
     ])->toArray(),
 
 ];

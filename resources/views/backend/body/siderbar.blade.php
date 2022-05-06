@@ -27,24 +27,22 @@
                         </p>
                     </a>
                 </li>
-
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
+                <!--users-->
+                <li class="nav-item {{ Request::is('admin/nguoi-dung-va-quyen*') ? 'menu-is-opening menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ Request::is('admin/nguoi-dung-va-quyen*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-users"></i>
                         <p>
-                            Forms
+                            Người dùng và quyền
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-
-                        <li class="nav-item">
-                            <a href="../forms/general.html" class="nav-link">
+                        <li class="nav-item {{ Request::is('admin/nguoi-dung-va-quyen*') ? 'menu-is-opening menu-open' : '' }}">
+                            <a href="{{ route('admin.nguoi_dung.index') }}" class="nav-link {{ Request::is('admin/nguoi-dung-va-quyen/danh-sach-nguoi-dung*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>General Elements</p>
+                                <p>Danh sách người dùng</p>
                             </a>
                         </li>
-
                     </ul>
                 </li>
             </ul>

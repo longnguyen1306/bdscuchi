@@ -31,12 +31,13 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-              <textarea id="summernote">
-                Place <em>some</em> <u>text</u> <strong>here</strong>
-              </textarea>
-                    </div>
-                    <div class="card-footer">
-                        Visit <a href="https://github.com/summernote/summernote/">Summernote</a> documentation for more examples and information about the plugin.
+                      <div class="row">
+                          <div class="col-md-12">
+                              <textarea id="summernote" style="width: 100%; height: 100px">
+                                HAHA
+                              </textarea>
+                          </div>
+                      </div>
                     </div>
                 </div>
             </div>

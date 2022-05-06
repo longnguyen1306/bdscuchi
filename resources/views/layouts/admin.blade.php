@@ -32,11 +32,14 @@
 <script src="{{ asset('backend/dist/js/adminlte.min.js') }}"></script>
 <!-- Summernote -->
 <script src="{{ asset('backend/plugins/summernote/summernote-bs4.min.js') }}"></script>
+<!-- bs-custom-file-input -->
+<script src="{{ asset('backend/plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 <!-- main js -->
 <script src="{{ asset('backend/js/main.js') }}"></script>
 
 @toastr_js
 @toastr_render
+@include('popper::assets')
 </body>
 
 </html>
